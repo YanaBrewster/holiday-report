@@ -1,21 +1,27 @@
 
 let activities = [];
 
-$('#total').click(function(totalHours){
-  alert("The total hours are" + totalHours)
-  console.log('the button is working');
-});
+
+// $('#total').click(function(totalHours){
+//   alert("The total hours are" + totalHours)
+//   console.log('the button is working');
+// });
 
 
-function totalBtnClick(){
-  $('#total').click(function(){
+
+  
+  $('#save').click(function(){
+    getActivities();
     for(let i = 0; i < activities.length; i++) {
       if(activities[i] == ''){
          alert('Input can not be left blank');
+         return false;
+      }
+      else{
+        return true;
       }
     }
   });
-}
 
 
 function getActivities(){
