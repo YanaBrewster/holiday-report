@@ -14,130 +14,42 @@
 //
 // 7) Provide link to change between each user
 
+// LINK TO
 
-let person1Activities = [];
-let person1Hours = [];
-let person2Activities = [];
-let person2Hours = [];
+$("#button1").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#person1").offset().top
+    }, 2000);
+});
 
-function getActivities(){
-  let person1Activity1 = document.getElementById('p1Activity1').value;
-  let person1Activity2 = document.getElementById('p1Activity2').value;
-  let person1Activity3 = document.getElementById('p1Activity3').value;
-  let person1Activity4 = document.getElementById('p1Activity4').value;
-  let person1Activity5 = document.getElementById('p1Activity5').value;
+$("#button2").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#person2").offset().top
+    }, 2000);
+});
 
-  let person2Activity1 = document.getElementById('p2Activity1').value;
-  let person2Activity2 = document.getElementById('p2Activity2').value;
-  let person2Activity3 = document.getElementById('p2Activity3').value;
-  let person2Activity4 = document.getElementById('p2Activity4').value;
-  let person2Activity5 = document.getElementById('p2Activity5').value;
+// CALCULATE HOURS
 
-  person1Activities.push(person1Activity1);
-  person1Activities.push(person1Activity2);
-  person1Activities.push(person1Activity3);
-  person1Activities.push(person1Activity4);
-  person1Activities.push(person1Activity5);
-  console.log(person1Activities);
-}
+$('.p1Hours').keyup(function () {
 
-function getHours(){
-  let person1Hours1 = document.getElementById('p1Hours1').value;
-  let person1Hours2 = document.getElementById('p1Hours2').value;
-  let person1Hours3 = document.getElementById('p1Hours3').value;
-  let person1Hours4 = document.getElementById('p1Hours4').value;
-  let person1Hours5 = document.getElementById('p1Hours5').value;
-  person1Hours.push(person1Hours1);
-  person1Hours.push(person1Hours2);
-  person1Hours.push(person1Hours3);
-  person1Hours.push(person1Hours4);
-  person1Hours.push(person1Hours5);
-  console.log(person1Hours);
-}
+    var sum = 0;
 
-  $('#save').click(function(){
-    // getActivities();
-    getHours();
-    // for(let i = 0; i < activities.length; i++) {
-    //   if(activities[i] == ''){
-    //      alert('Input can not be left blank');
-    //   }
-    //   else{
-    //     return activities;
-    //   }
-    // }
+    $('.p1Hours').each(function() {
+        sum += Number($(this).val());
+    });
 
-    for (let i = 0; i < person1Hours.length; i++){
-      if(person1Hours[i] == ''){
-        alert('Input can not be left blank');
-     }
-     else{
-       return person1Hours;
-     }
-    }
-    person1HoursCalculate();
-  });
+    $('#totalHours1').val(sum);
 
-  function person1HoursCalculate(){
-    let person1HoursIntegers = [];
-    for (let i = 0; i <person1Hours.length-1; i++) {
-      person1HoursIntegers[i] = parseInt(person1Hours[i]);
-      person1HoursIntegers.push(person1HoursIntegers[i]);
-      console.log(person1HoursIntegers);
+});
 
-    }
+$('.p2Hours').keyup(function () {
 
-    // let person1HoursTotal = sum(person1HoursIntegers);
-    // console.log(person1HoursTotal);
-  }
+    var sum = 0;
 
+    $('.p2Hours').each(function() {
+        sum += Number($(this).val());
+    });
 
+    $('#totalHours2').val(sum);
 
-// function showResults(){
-//   for
-// }
-
-//   $('#save').click(function(){
-//     getActivities();
-//     for(let i = 0; i < activities.length; i++) {
-//       if(activities[i] == ''){
-//          alert('Input can not be left blank');
-//          return false;
-//       }
-//       else{
-//         return true;
-//       }
-//     }
-//   });
-//
-//
-// function getActivities(){
-//   let activity1 = document.getElementById('activity1').value;
-//   let activity2 = document.getElementById('activity2').value;
-//   let activity3 = document.getElementById('activity3').value;
-//   let activity4 = document.getElementById('activity4').value;
-//   let activity5 = document.getElementById('activity5').value;
-//   activities.push(activity1);
-//   activities.push(activity2);
-//   activities.push(activity3);
-//   activities.push(activity4);
-//   activities.push(activity5);
-//   console.log(activities);
-// }
-//
-// $( "#total1" ).click(function() {
-//
-// // let p1Hours1 = document.getElementById('p1Hours1').value;
-// // let p1Hours2 = document.getElementById('p1Hours2').value;
-// // let p1Hours3 = document.getElementById('p1Hours3').value;
-// // let p1Hours4 = document.getElementById('p1Hours4').value;
-// // let p1Hours5 = document.getElementById('p1Hours5').value;
-// function add() {
-//     var sum = 0;
-//     $(".add1").each(function() {
-//         sum += +this.value;
-//     });
-//     return sum;
-//     console.log(sum);
-//   }
-// });
+});
