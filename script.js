@@ -1,6 +1,4 @@
 
-
-
 //  TASK
 // Input form activity task
 //
@@ -19,37 +17,29 @@
 $("#button1").click(function() {
     $('html, body').animate({
         scrollTop: $("#person1").offset().top
-    }, 2000);
+    }, 1000);
 });
 
 $("#button2").click(function() {
     $('html, body').animate({
         scrollTop: $("#person2").offset().top
-    }, 2000);
+    }, 1000);
 });
 
 // CALCULATE HOURS
 
 $('.p1Hours').keyup(function () {
-
     var sum = 0;
-
     $('.p1Hours').each(function() {
         sum += Number($(this).val());
     });
-
     $('#totalHours1').val(sum);
-
 });
 
 $('.p2Hours').keyup(function () {
-
     var sum = 0;
-
     $('.p2Hours').each(function() {
         sum += Number($(this).val());
     });
-
     $('#totalHours2').val(sum);
-
 });
