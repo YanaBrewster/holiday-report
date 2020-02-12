@@ -1,16 +1,14 @@
 
 //  TASK
 // Input form activity task
-//
-// 1) Take 5 activities from 1st user and store
-// 2) Take hours spent from 1st user and store
-// 3) Display total of hours spent for 1st user
-//
+
 // 4) Take 5 activities from 2d user and store
 // 5) Take hours spent from 2d user and store
 // 6) Display total of hours spent for 1st user
 //
 // 7) Provide link to change between each user
+
+$(document).ready(function(){
 
 // LINK TO
 
@@ -43,3 +41,5 @@ $('.p2Hours').keyup(function () {
     });
     $('#totalHours2').val(sum);
 });
+
+});//document.ready
